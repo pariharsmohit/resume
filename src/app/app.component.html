@@ -1,11 +1,9 @@
-<body>
-  <section *ngIf="resume" id="content">
-    <app-header [resume]="resume"></app-header>
-    <app-skills [skills]="resume.skills"></app-skills>
-    <app-education [education]="resume.education"></app-education>
-    <app-trainings [trainings]="resume.trainings"></app-trainings>
-    <app-acad-project [projects]="resume.projects"></app-acad-project>
-    <app-personal-project [personalProjects]="resume.personalProjects"></app-personal-project>
-  </section>
-</body>
-<router-outlet></router-outlet>
+<nav>
+    <a href="/skills">Skills</a>
+</nav>
+<section class="left-panel"></section>
+<section class="right-panel">
+    <router-outlet></router-outlet>
+</section>
+
+

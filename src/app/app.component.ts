@@ -8,7 +8,7 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
     title = 'resume';
-    resume: any;
+    // resume: any;
 
     constructor(private httpService: HttpService) { }
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
         console.log("Oninit call");
         this.httpService.getResume()
             .subscribe(data => {
-                this.resume = data;
+                this.httpService.setResumeData(data);
             })
     }
 }
