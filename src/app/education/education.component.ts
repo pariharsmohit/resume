@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../http.service'
 
 @Component({
   selector: 'app-education',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  @Input() education: [];
+  education: [];
 
   ngOnInit(): void {
+    this.education = this.httpService.getResumeData() && this.httpService.getResumeData().education;
   }
 
 }

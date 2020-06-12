@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
   
-  @Input() resume: any;
+  resume: any;
 
   ngOnInit(): void {
+    this.resume = this.httpService.getResumeData();
   }
 
 }

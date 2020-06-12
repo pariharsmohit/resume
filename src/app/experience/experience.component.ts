@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../http.service'
 
 @Component({
   selector: 'app-experience',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  @Input() experience : [];
+  experience : [];
 
   ngOnInit(): void {
+    this.experience = this.httpService.getResumeData() && this.httpService.getResumeData().experience;
   }
 
 }

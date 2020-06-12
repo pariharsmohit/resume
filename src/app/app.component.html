@@ -1,7 +1,13 @@
 <nav>
-    <a href="/skills">Skills</a>
+    <a routerLink="/skills">Skills</a>
+    <a routerLink="/projects">Projects</a>
+    <a routerLink="/experience">Experience</a>
+    <a routerLink="/personalProjects">Personal Projects</a>
+    <a routerLink="/education">Education</a>
 </nav>
-<section class="left-panel"></section>
+<section class="left-panel">
+    <app-header></app-header>
+</section>
 <section class="right-panel">
     <router-outlet></router-outlet>
 </section>

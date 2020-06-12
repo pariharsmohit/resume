@@ -1,8 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  a {
+    padding-right: 10%;
+    width: auto;
+    text-align: center;
+  }
+}
+
+.left-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 100vh;
+}
+
+.right-panel {
+  position: absolute;
+  top: 10vh;
+  left: 30vw;
+  width: 30vw;
+  height: 100vh;
+}
 
 :host ::ng-deep {
-  body {
+  * {
     font-family: 'Open Sans', sans-serif;
   }
 

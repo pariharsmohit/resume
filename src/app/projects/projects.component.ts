@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../http.service'
 
 @Component({
   selector: 'app-projects',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  @Input() projects: [];
+  projects: [];
 
   ngOnInit(): void {
+    this.projects =  this.httpService.getResumeData() && this.httpService.getResumeData().projects;
   }
 
 }
