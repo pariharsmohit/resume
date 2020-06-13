@@ -1,38 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+.main {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "nav-bar nav-bar"
+    "left-panel right-panel"
+    "left-panel right-panel";
+}
+
 nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 70vw;
+  background-color: black;
+  color: white;
+  grid-area: nav-bar;
+  font-size: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
   
+  #home-btn {
+    margin-right: auto;
+  }
+
   a {
-    padding-right: 10%;
-    width: auto;
-    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      background-color: #DCDCDC;
+      color: black;
+    }
   }
 }
 
-.left-panel {
-  position: fixed;
-  top: 0;
-  left: 0;
+.left-panel{
+  grid-area: left-panel;
   width: 30vw;
-  height: 100vh;
+  height: calc(100vh - 58px);
+  background-color:	#DCDCDC;
 }
 
 .right-panel {
-  position: absolute;
-  top: 10vh;
-  left: 30vw;
-  width: 30vw;
-  height: 100vh;
+  width: 70vw;
+  grid-area: right-panel;
+  background-color: #C0C0C0;
 }
 
-:host ::ng-deep {
+:host ::ng-deep .content-wrapper {
+  padding: 20px;
   * {
     font-family: 'Open Sans', sans-serif;
   }
@@ -63,47 +80,30 @@ nav {
     border-bottom : 1px solid #e3e3e3;
   }
 
-  section .label {
-    font-weight  : bold;
-    width        : 150px;
-    text-align   : right;
-    padding-right: 0.5em;
-    display      : inline-block;
-  }
-
-  section .content {
-    vertical-align: top;
-    width         : 550px;
-    display       : inline-block;
-  }
-
-  section section {
+  section {
     margin-bottom: 2rem;
-  }
-
-  section ul {
-    width   : 800px;
-    overflow: hidden;
+    
+    ul {
+      width   : 800px;
+      overflow: hidden;
+    }
+    .content {
+      vertical-align: top;
+      width         : 550px;
+      display       : inline-block;
+    }
+    .label {
+      font-weight  : bold;
+      width        : 150px;
+      text-align   : right;
+      padding-right: 0.5em;
+      display      : inline-block;
+    }
   }
 
   section .double li {
     float: left;
     width: 30%;
-  }
-
-  #contact {
-    font-size : 13px;
-    margin-top: 1em;
-  }
-
-  #contact a {
-    text-decoration: none;
-  }
-
-  #contact img {
-    width        : 15px;
-    height       : 15px;
-    padding-right: 1.5%;
   }
 
   #others div {
@@ -112,27 +112,28 @@ nav {
   }
 
   a {
-    text-decoration: none
-  }
-
-  a:link {
+    text-decoration: none;
+  
+    &:link {
     color: black;
-  }
+    }
 
-  /* visited link */
-  a:visited {
-    color: black;
-  }
+    /* visited link */
+    &:visited {
+      color: black;
+    }
 
-  /* mouse over link */
-  a:hover {
-    color: blue;
-  }
+    /* mouse over link */
+    &:hover {
+      color: blue;
+    }
 
-  /* selected link */
-  a:active {
-    color: black;
-  }
+    /* selected link */
+    &:active {
+      color: black;
+    }
+ }
+
 
   .hide {
     display: none !important;

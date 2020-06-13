@@ -1,17 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-trainings',
   templateUrl: './trainings.component.html',
   styleUrls: ['./trainings.component.scss']
 })
-export class TrainingsComponent implements OnInit {
+export class TrainingsComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  @Input() trainings: [];
+  trainings: [];
 
   ngOnInit(): void {
+    this.httpService.getResumeData()
+      .subscribe((data: any) => {
+        this.trainings = data.trainings;
+      });
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

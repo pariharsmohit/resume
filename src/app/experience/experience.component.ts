@@ -1,19 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HttpService } from '../http.service'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit {
-
+export class ExperienceComponent implements OnInit, OnDestroy {
+  experience : [];
+  resumeDataSubscription: Subscription
   constructor(private httpService: HttpService) { }
 
-  experience : [];
 
   ngOnInit(): void {
-    this.experience = this.httpService.getResumeData() && this.httpService.getResumeData().experience;
+    this.httpService.getResumeData()
+      .subscribe((data: any) => {
+        this.experience = data.experience;
+      });
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

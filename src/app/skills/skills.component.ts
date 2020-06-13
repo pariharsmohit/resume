@@ -1,19 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HttpService } from './../http.service';
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
-
+export class SkillsComponent implements OnInit, OnDestroy {
+  skills: [];
+  resumeDataSubscription: Subscription;
   constructor(private httpService: HttpService) { }
 
-  skills: [];
 
   ngOnInit(): void {
-    this.skills = this.httpService.getResumeData() && this.httpService.getResumeData().skills;
+    this.httpService.getResumeData()
+      .subscribe((data: any) => {
+        this.skills = data.skills;
+      });
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

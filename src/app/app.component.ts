@@ -8,15 +8,10 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
     title = 'resume';
-    // resume: any;
 
     constructor(private httpService: HttpService) { }
 
     ngOnInit(): void {
-        console.log("Oninit call");
         this.httpService.getResume()
-            .subscribe(data => {
-                this.httpService.setResumeData(data);
-            })
     }
 }

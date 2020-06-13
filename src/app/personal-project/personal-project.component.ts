@@ -1,19 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HttpService } from '../http.service'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-personal-project',
   templateUrl: './personal-project.component.html',
   styleUrls: ['./personal-project.component.scss']
 })
-export class PersonalProjectComponent implements OnInit {
-
+export class PersonalProjectComponent implements OnInit, OnDestroy {
+  personalProjects: [];
+  resumeDataSubscription: Subscription;
   constructor(private httpService: HttpService) { }
 
- personalProjects: [];
 
   ngOnInit(): void {
-    this.personalProjects = this.httpService.getResumeData() && this.httpService.getResumeData().personalProjects;
+    this.httpService.getResumeData()
+      .subscribe((data: any) => {
+        this.personalProjects = data.personalProjects;
+      });
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

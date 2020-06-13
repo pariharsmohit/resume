@@ -1,14 +1,24 @@
-#contact {
+section {
+  text-align: center;
+  #contact {
+    padding: 0 60px;
     font-size: 13px;
     margin-top: 1em;
+    text-align: left;
 
     a {
         text-decoration: none;
       }
     
     img {
-        width: 15px;
+        width: 20px;
         height: 15px;
         padding-right: 1.5%;
       }
+  }
+
+  #profile-image {
+    width: 300px;
+    border-radius: 50%;
+  }
 }
