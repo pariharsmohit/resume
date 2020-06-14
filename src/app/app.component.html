@@ -1,16 +1,16 @@
 <section class="main">
     <nav>
-        <a routerLink="/home" id="home-btn">Home</a>
-        <a routerLink="/skills">Skills</a>
-        <a routerLink="/projects">Projects</a>
-        <a routerLink="/experience">Experience</a>
-        <a routerLink="/personalProjects">Personal Projects</a>
-        <a routerLink="/education">Education</a>
+        <a href="#home" id="home-btn">Home</a>
+        <a href="#skills" id="nav-skills">Skills</a>
+        <a href="#projects" id="nav-projects">Projects</a>
+        <a href="#experience" id="nav-experience">Experience</a>
+        <a href="#personal-projects" id="nav-personal-projects">Personal Projects</a>
+        <a href="#education" id="nav-education">Education</a>
     </nav>
     <section class="left-panel">
         <app-header></app-header>
     </section>
-    <section class="right-panel">
-        <router-outlet></router-outlet>
+    <section class="right-panel" (scroll)="scrollHandler()">
+        <app-home></app-home>
     </section>
 </section>

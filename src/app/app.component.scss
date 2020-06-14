@@ -29,9 +29,9 @@ nav {
     text-decoration: none;
     color: $color4;
 
-    &:hover {
+    &:hover,
+    &.selected {
       background-color: $color3;
-      color: $color1;
     }
   }
 }
@@ -54,9 +54,7 @@ nav {
 
 :host ::ng-deep .content-wrapper {
   padding: 20px;
-  * {
-    font-family: 'Open Sans', sans-serif;
-  }
+  min-height: $main-component-height;
 
   #content {
     margin: 0 auto;
@@ -128,7 +126,7 @@ nav {
 
     /* mouse over link */
     &:hover {
-      color: $color2;
+      color: $color3;
     }
 
     /* selected link */

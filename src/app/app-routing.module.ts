@@ -9,13 +9,13 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'education', component: EducationComponent },
-  { path: 'personalProjects', component: PersonalProjectComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'experience', component: ExperienceComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full'}
+  // { path: 'home', component: HomeComponent },
+  // { path: 'skills', component: SkillsComponent },
+  // { path: 'education', component: EducationComponent },
+  // { path: 'personalProjects', component: PersonalProjectComponent },
+  // { path: 'projects', component: ProjectsComponent },
+  // { path: 'experience', component: ExperienceComponent },
+  // { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

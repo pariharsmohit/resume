@@ -1,9 +1,11 @@
-section {
+$main-component-height: calc(100vh - 58px);
+
+.home-page {
+    margin: 0 auto;
+    padding-top: 150px;
     font-size: 20px;
-    position: absolute;
-    top: 25%;
-    left: 45%;
     text-align: center;
+    min-height: $main-component-height;
     
     p {
         padding: 0 0 30px 0;
