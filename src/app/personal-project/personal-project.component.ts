@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./personal-project.component.scss']
 })
 export class PersonalProjectComponent implements OnInit, OnDestroy {
-  personalProjects: [];
+  personalProjects: any;
   resumeDataSubscription: Subscription;
   constructor(private httpService: HttpService) { }
 
@@ -17,6 +17,7 @@ export class PersonalProjectComponent implements OnInit, OnDestroy {
     this.httpService.getResumeData()
       .subscribe((data: any) => {
         this.personalProjects = data.personalProjects;
+        // this.personalProjects = [...data.personalProjects, ...data.personalProjects];
       });
   }
 

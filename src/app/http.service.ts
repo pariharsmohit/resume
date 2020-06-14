@@ -10,7 +10,7 @@ export class HttpService {
   constructor(private httpClient: HttpClient) { }
 
   getResume() {
-    return this.httpClient.get('https://mohitsparihar.github.io/assets/resume.json')
+    return this.httpClient.get('../assets/resume.json')
       .subscribe(data => {
         this.resumeDataObservable.next(data);
       });
