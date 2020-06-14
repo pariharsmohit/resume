@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import '../assets/_variables.scss';
 $main-component-height: calc(100vh - 58px);
 
 .main {
@@ -11,8 +12,7 @@ $main-component-height: calc(100vh - 58px);
 }
 
 nav {
-  background-color: black;
-  color: white;
+  background-color: $color1;
   grid-area: nav-bar;
   font-size: 20px;
   display: flex;
@@ -27,11 +27,11 @@ nav {
   a {
     padding: 15px;
     text-decoration: none;
-    color: white;
+    color: $color4;
 
     &:hover {
-      background-color: #DCDCDC;
-      color: black;
+      background-color: $color3;
+      color: $color1;
     }
   }
 }
@@ -40,7 +40,7 @@ nav {
   grid-area: left-panel;
   width: 30vw;
   height: $main-component-height;
-  background-color:	#DCDCDC;
+  background-color:	$color3;
 }
 
 .right-panel {
@@ -48,7 +48,8 @@ nav {
   width: 70vw;
   height: $main-component-height;
   grid-area: right-panel;
-  background-color: #C0C0C0;
+  background-color: $color4;
+  color: $color1;
 }
 
 :host ::ng-deep .content-wrapper {
@@ -79,7 +80,7 @@ nav {
     padding-bottom: 4px;
     margin-right  : 10px;
     margin-top    : 0.8em;
-    border-bottom : 1px solid	#A9A9A9;
+    border-bottom : 1px solid	$color2;
   }
 
   section {
@@ -117,22 +118,22 @@ nav {
     text-decoration: none;
   
     &:link {
-    color: black;
+      color: $color1;
     }
 
     /* visited link */
     &:visited {
-      color: black;
+      color: $color1;
     }
 
     /* mouse over link */
     &:hover {
-      color: blue;
+      color: $color2;
     }
 
     /* selected link */
     &:active {
-      color: black;
+      color: $color1;
     }
  }
 

@@ -1,11 +1,14 @@
+@import '../../assets/_variables.scss';
+
 section {
   text-align: center;
+  color: $color1;
   h1{
     margin-bottom : 30px;
-    padding-bottom: 4px;
+    padding: 4px;
     margin-right  : 10px;
     margin-top    : 0.8em;
-    border-bottom : 1px solid	#A9A9A9;
+    border-bottom : 1px solid	$color5;
   }
   
   .name {
@@ -23,22 +26,22 @@ section {
       font-size: 1rem;
       text-decoration: none;
       &:link {
-        color: black;
+        color: $color1;
         }
     
         /* visited link */
         &:visited {
-          color: black;
+          color: $color1;
         }
     
         /* mouse over link */
         &:hover {
-          color: blue;
+          color: $color4;
         }
     
         /* selected link */
         &:active {
-          color: black;
+          color: $color1;
         }
       }
     

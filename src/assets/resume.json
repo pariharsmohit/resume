@@ -111,7 +111,7 @@
       {
         "name": "Weather Page",
         "url": "https://mohitsparihar.github.io/weatherPage/",
-        "description": "Weather app built in JavaScript with the use of API"
+        "description": "Weather app built in JavaScript with the use of openweathermap.org API and leaflet.js"
       },
       {
         "name": "Password Generator",
