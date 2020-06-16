@@ -105,22 +105,25 @@
     "personalProjects": [
       {
         "name": "Resume",
-        "url": "https://mohitsparihar.github.io/resume/",
+        "demo": "https://mohitsparihar.github.io/resume/",
+        "code": "https://github.com/mohitsparihar/resume",
         "description": "Resume built in Angular 2+"
       },
       {
         "name": "Weather Page",
-        "url": "https://mohitsparihar.github.io/weatherPage/",
+        "demo": "https://mohitsparihar.github.io/weatherPage/",
+        "code": "https://github.com/mohitsparihar/weatherPage",
         "description": "Weather app built in JavaScript with the use of openweathermap.org API and leaflet.js"
       },
       {
         "name": "Password Generator",
-        "url": "https://mohitsparihar.github.io/passwordGenerator/",
+        "demo": "https://mohitsparihar.github.io/passwordGenerator/",
+        "code": "https://github.com/mohitsparihar/passwordGenerator",
         "description": "Random password Generator"
       },
       {
         "name": "freeCodeCamp Responsive Web Design Certification",
-        "url": "https://www.freecodecamp.org/certification/mohitsparihar/responsive-web-design",
+        "link": "https://www.freecodecamp.org/certification/mohitsparihar/responsive-web-design",
         "description": "Responsive Web Design Certification"
       }
     ],
