@@ -2,10 +2,10 @@
   <section *ngIf="resume" id="content">
     <app-header [resume]="resume"></app-header>
     <app-skills [skills]="resume.skills"></app-skills>
-    <app-education [education]="resume.education"></app-education>
-    <app-trainings [trainings]="resume.trainings"></app-trainings>
-    <app-acad-project [projects]="resume.projects"></app-acad-project>
+    <app-projects [projects]="resume.projects"></app-projects>
+    <app-experience [experience]="resume.experience"></app-experience>
     <app-personal-project [personalProjects]="resume.personalProjects"></app-personal-project>
+    <app-education [education]="resume.education"></app-education>
   </section>
 </body>
 <router-outlet></router-outlet>
