@@ -9,7 +9,7 @@ export class ExperienceComponent implements OnInit {
 
   constructor() { }
 
-  @Input() experience : [];
+  @Input() experience: [];
 
   ngOnInit(): void {
   }

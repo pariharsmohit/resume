@@ -9,6 +9,6 @@ export class HttpService {
   constructor(private httpClient: HttpClient) { }
 
   getResume() {
-    return this.httpClient.get('https://mohitsparihar.github.io/massets/resume.json')
+    return this.httpClient.get('https://mspwrites.com/massets/resume.json')
   }
 }
