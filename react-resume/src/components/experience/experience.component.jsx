@@ -1,42 +1,77 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Experience = (props) => {
+class Experience extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            editMode: false,
+            experience: props.experience
+        }
+        this.handleEdit = this.handleEdit.bind(this);
+        this.editForm = this.editForm.bind(this);
+        this.updateObjective = this.updateObjective.bind(this);
+    }
 
-    const items = props.experience.map(el => {
+    handleEdit() {
+        // this.props.dispatch(editObjective(this.state.objective));
+        return;
+    }
+
+    editForm() {
+        this.setState({
+            editMode: !this.state.editMode
+        })
+    }
+
+    updateObjective(event) {
+        this.setState({
+            projects: JSON.parse(event.target.value),
+            editMode: false
+        })
+    }
+
+    render() {
+        const items = this.state.experience.map(el => {
+            return (
+                <li>
+                    <section>
+                        <ul>
+                            <li>
+                                <div className="label">Name:</div>
+                                <div className="content">{el.name}</div>
+                            </li>
+                            <li>
+                                <div className="label">Title:</div>
+                                <div className="content">{el.title}</div>
+                            </li>
+                            <li>
+                                <div className="label">Tenure:</div>
+                                <div className="content">{el.startDate} - {el.endDate}</div>
+                            </li>
+                            <li>
+                                <div className="label">Url:</div>
+                                <div className="content">{el.url}</div>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            )
+        });
+
         return (
-            <li>
-            <section>
-                <ul>
-                    <li>
-                        <div class="label">Name:</div>
-                        <div class="content">{el.name}</div>
-                    </li>
-                    <li>
-                        <div class="label">Title:</div>
-                        <div class="content">{el.title}</div>
-                    </li>
-                    <li>
-                        <div class="label">Tenure:</div>
-                        <div class="content">{el.startDate} - {el.endDate}</div>
-                    </li>
-                    <li>
-                        <div class="label">Url:</div>
-                        <div class="content">{el.url}</div>
-                    </li>
-                </ul>
+            <section id="experience">
+                <div className="div-header">
+                    <h2>Experience</h2>
+                    <div className="edit-btn" onClick={this.editForm}><i className="fas fa-pencil-alt"></i></div>
+                </div>
+                {!this.state.editMode &&
+                    <ul>
+                        {items}
+                    </ul>}
+                {this.state.editMode && <textarea className="text-area" autoFocus onBlur={this.updateObjective} defaultValue={JSON.stringify(this.state.experience, undefined, 4)} />}
             </section>
-        </li>
         )
-      });
-      
-    return (
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                {items}
-            </ul>
-        </section>
-    )
+    }
 };
 
 export default Experience;

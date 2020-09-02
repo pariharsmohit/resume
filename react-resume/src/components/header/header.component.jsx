@@ -7,7 +7,7 @@ import linkedinLogo from './../../assets/img/linkedinLogo.png';
 const Header = (props) => {
     return (
     <section>
-    <h1 class="name">{props.resume.name}</h1>
+    <h1 className="name">{props.resume.name}</h1>
     <div id="contact">
         <div><img src={phoneLogo}/><a href="tel:{props.resume.phoneNumber}"
                 target="_blank">{props.resume.phoneNumber}</a></div>

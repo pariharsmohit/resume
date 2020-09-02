@@ -5,16 +5,16 @@
             <section>
                 <ul>
                     <li>
-                        <div class="label">Title:</div>
-                        <div class="content">{{projectObj.title}}</div>
+                        <div className="label">Title:</div>
+                        <div className="content">{{projectObj.title}}</div>
                     </li>
                     <li>
-                        <div class="label">Description:</div>
-                        <div class="content">{{projectObj.description}}</div>
+                        <div className="label">Description:</div>
+                        <div className="content">{{projectObj.description}}</div>
                     </li>
                     <li *ngIf="projectObj.url">
-                        <div class="label">Url:</div>
-                        <div class="content"><a href="{{projectObj.url}}" target="_blank">{{projectObj.url}}</a></div>
+                        <div className="label">Url:</div>
+                        <div className="content"><a href="{{projectObj.url}}" target="_blank">{{projectObj.url}}</a></div>
                     </li>
                 </ul>
             </section>

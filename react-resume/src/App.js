@@ -10,44 +10,48 @@ import Experience from './components/experience/experience.component';
 import PersonalProjects from './components/personal-project/personal-project.component';
 import Education from './components/education/education.component';
 import Axios from 'axios';
+import { connect } from 'react-redux';
+import { updateResume } from './actions';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      resume: null
-    };
   }
 
-  componentDidMount(){
-    Axios.get('https://mspwrites.com/massets/resume.json').then((response)=>{
-      this.setState({
-        resume: response.data
-      });
+  componentWillMount() {
+    const { dispatch } = this.props;
+    Axios.get('https://mspwrites.com/massets/resume.json').then((response) => {
+      if(response.data.name) {
+        dispatch(updateResume(response.data));
+      }
     })
   }
 
   render() {
-    if(!this.state.resume){
+    const resume  = this.props.resume;
+    if (!resume) {
       return (
         <section></section>
       )
     }
     return (
       <section className="App" id="content">
-      <Header resume={this.state.resume} />
-      <Objective objective={this.state.resume.objective} />
-      <Summary summary={this.state.resume.executiveSummary} />
-      <Skills skills={this.state.resume.skills}/>
-      <Projects projects={this.state.resume.projects} />
-      <Experience experience={this.state.resume.experience} />
-      <PersonalProjects personalProjects={this.state.resume.personalProjects} />
-      <Education education={this.state.resume.education} />
-    </section>
+        {resume.name && <Header resume={resume} />}
+        {resume.objective && <Objective objective={resume.objective} />}
+        {resume.executiveSummary && <Summary summary={resume.executiveSummary} />}
+        {resume.skills && <Skills skills={resume.skills} />}
+        {resume.projects && <Projects projects={resume.projects} />}
+        {resume.experience && <Experience experience={resume.experience} />}
+        {resume.personalProjects && <PersonalProjects personalProjects={resume.personalProjects} />}
+        {resume.education && <Education education={resume.education} />}
+      </section>
     );
   }
 };
 
+const mapStateToProps = state => ({
+  resume: state.resume
+})
 
-export default App;
+export default connect(mapStateToProps)(App);
